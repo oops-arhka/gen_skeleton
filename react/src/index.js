@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoApp from './TodoApp';
+import App from './App';
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
@@ -14,7 +14,7 @@ const rootElement = document.getElementById('root')
 
 ReactDOM.render(
     <Provider store={store}>
-        <TodoApp />
+        <App />
     </Provider>,
     rootElement
 )
