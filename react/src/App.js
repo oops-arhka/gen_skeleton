@@ -1,12 +1,27 @@
 import React from "react";
-import Field from "./components/Field/Field";
+import DataTable from "./components/DataTable/DataTable";
 import Login from "./components/Login";
 
 export default function TodoApp() {
-    return (
-      <div className="todo-app">
-        <h1>Hello World</h1>
-        <Field />
-      </div>
-    );
-  }
+  const headings = [
+    "Product name",
+    "200",
+    "400",
+    "600",
+    "800",
+    "1000"
+  ];
+
+  const rows = [
+    ["Product name", "200", "400", "600", "800", "1000"],
+    ["Product name", "200", "400", "600", "800", "1000"],
+    ["Product name", "200", "400", "600", "800", "1000"],
+    ["Product name", "200", "400", "600", "800", "1000"]
+  ];
+  return (
+    <div className="todo-app">
+      <h1>Hello World</h1>
+      <DataTable headings={headings} rows={rows} />
+    </div>
+  );
+}
