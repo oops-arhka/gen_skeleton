@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
         }
 
         case DEL_TODO: {
-            return Object.assign({}, state, {todos : [...state.todos.filter((el)=>el.id != action.id)]})
+            return Object.assign({}, state, {todos : [...state.todos.filter((el)=>el.id !== action.id)]})
         }
 
         case EDIT_TODO: {
