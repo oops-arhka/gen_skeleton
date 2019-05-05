@@ -23,9 +23,7 @@ router.post('/fetch', async (req, res, next) => {
     ["Product name", "true", "10", "insects", "false", "false"],
     ["Product name", "South America", "true", "Proxima Cnetaur", "Doma", "Norm"]
   ];
-
-
-
+  
   res.send({answer : questions[row][column], trueAnswer : answers[row][column] }); 
 });
 

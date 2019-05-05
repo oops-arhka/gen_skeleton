@@ -67,7 +67,7 @@ const usersRouter = require("./routes/users");
 
 // Подключаем mongoose.
 const mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost:27017/Party', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/Game', { useNewUrlParser: true });
 
 // Подключаем статику
 app.use(express.static(path.join(__dirname, 'public')));

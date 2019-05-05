@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import Cell from "../Cell/Cell";
 import "./DataTable.css";
 import Question from "../Question/Question";
+import { fetchQuestionsAC } from '../../reducers/actions/action'
 
-const mapStateToProps = (state, ownProps) => ({
-  todos: state.todos
+const mapStateToProps = (state) => ({
+  todos: state.questions
 });
 
 class DataTable extends React.Component {
@@ -18,6 +19,10 @@ class DataTable extends React.Component {
       answer: "",
       status: false,
     };
+  }
+
+  async componentWillMount() {   
+     await this.props.fetchQuestions();
   }
 
   checkAnswer = async (event) => {
@@ -75,7 +80,6 @@ class DataTable extends React.Component {
   render() {
     const { headings, rows } = this.props;
     this.renderRow = this.renderRow.bind(this);
-
     const tbodyMarkup = rows.map(this.renderRow);
 
     return (
@@ -90,7 +94,7 @@ class DataTable extends React.Component {
             </label>
             <button className='btnName' >
               Submit
-                        </button>
+            </button>
           </form>}</div>          
           <div>{this.state.status && this.state.answer}</div>
           <div>{this.state.status && "CORRECT"}</div>
@@ -99,4 +103,13 @@ class DataTable extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(DataTable);
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchQuestions: () => dispatch(fetchQuestionsAC()),    
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(DataTable);

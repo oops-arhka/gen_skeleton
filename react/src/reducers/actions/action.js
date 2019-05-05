@@ -1,21 +1,20 @@
-import { ADD_TODO, DEL_TODO, EDIT_TODO } from './actionTypes'
+import { ADD_QUESTION } from './actionTypes'
 
 let nextTodoId = 0
 export const addTodoAC = content => ({
-    type: ADD_TODO,
+    type: ADD_QUESTION,
     payload: {
         id: ++nextTodoId,
         content,
     }
 })
 
-export const delTodoAC = (id) => ({
-    id: id,
-    type: DEL_TODO,
-})
+export const fetchQuestionsAC = () => {
+    return async (dispatch) => {       
+        let res = await fetch(`/getall`)
+        let data = await res.json();
+        console.log(data)
+        //dispatch(addTodoAC(data));
+    }
+}
 
-export const editTodoAC = (content, id) => ({
-    type: EDIT_TODO,
-    id: id,
-    content
-})

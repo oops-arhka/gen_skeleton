@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     todos: state.todos
 });
 

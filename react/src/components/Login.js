@@ -1,49 +1,44 @@
-import React from "react";
-import { connect } from "react-redux";
-import { delTodoAC } from "../reducers/actions/action";
+// import React from "react";
+// import { connect } from "react-redux";
 
-class Login extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: null,
-        };
-    }
+// class Login extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             value: null,
+//         };
+//     }
 
-    sendFetch = async () => {
-        let res = await fetch("/fetch", 
-        
-        
-        );
-        console.log('Sent waiting for respond');
-        let data = await res.text();
-        console.log(data);
-    }
+//     sendFetch = async () => {
+//         let res = await fetch("/fetch",         
+//         );
+//         console.log('Sent waiting for respond');
+//         let data = await res.text();
+//         console.log(data);
+//     }
 
-    render() {
-        return (
-            <div>
-                <input
-                    onChange={e => this.updateInput(e.target.value)}
-                    value={this.state.input}
-                />
-                <button className='btnName' onClick={() => this.sendFetch()}>
-                    Send Fetch
-            </button>
+//     render() {
+//         return (
+//             <div>
+//                 <input
+//                     onChange={e => this.updateInput(e.target.value)}
+//                     value={this.state.input}
+//                 />
+//                 <button className='btnName' onClick={() => this.sendFetch()}>
+//                     Send Fetch
+//             </button>
+//             </div>
+//         );
+//     }
+// }
 
-            </div>
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         delTodoMethod: (id) => dispatch(delTodoAC(id))
+//     }
+// }
 
-        );
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        delTodoMethod: (id) => dispatch(delTodoAC(id))
-    }
-}
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(Login);
+// export default connect(
+//     null,
+//     mapDispatchToProps
+// )(Login);
